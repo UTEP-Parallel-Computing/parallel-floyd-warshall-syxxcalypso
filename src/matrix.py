@@ -9,7 +9,7 @@ class ParallelMatrix(object):
     def __init__(self, rows, cols, fill_random=False):
         self.rows = rows
         self.cols = cols
-        self.table = numpy.array((rows,cols), dtype=numpy.short)
+        self.table = numpy.array([[e]*cols for e in [0]*rows], dtype=numpy.short)
         if fill_random:
             for i in range(self.rows):
                 for j in range(self.cols):
@@ -29,7 +29,7 @@ class ParallelMatrix(object):
         result_matrix_s = ''
         for row in self.table:
             for i in row:
-                if i >= 2**10:
+                if i >= 2**8:
                     result_matrix_s += ' . '
                 else:
                     result_matrix_s += '{:2d} '.format(i)
