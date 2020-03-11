@@ -2,8 +2,6 @@
 ####################################
 #
 # Jennifer Harrison
-# ID: 
-# Class: 
 #
 ####################################
 import os, sys, time, matrix
