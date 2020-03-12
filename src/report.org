@@ -1,0 +1,51 @@
+#+TITLE: Floyd Warshall in Parallel Report
+
+* Problems
+
+  The principle problem was the use of MPI and mpi4py, seeking workable
+  documentation and reference initially felt unintuitive as mpi4py cites its own
+  documentation as sparse and incomplete. Documentation was better provided
+  through the maintainers of the C implementation of OpenMPI for instructions on
+  both usage and the intended workflow behind it. (mpi4py describes in its
+  documentation quite well how to /use/ the methods provided, just not what they
+  are used for, why, how they tie together, purpose, and workflow)
+
+  Another problem was acquiring an update version of MPI from my Linux
+  distributions package manager (mpi4py would not for any efforts install and
+  operate on my windows machine), as the binaries provided by most distributions
+  are older and quite broken. Compiling from source was necessary and took the
+  majority of the time spent on this project.
+
+* Unresolved problems
+
+  On my machine the program reports abnormal behavior if run with more than 1
+  process, however the matrix transform operation appears to complete without
+  issue.
+
+* Project Time
+
+  Approximately 3 consecutive days were spent compiling the MPI binaries from
+  source on my machine, an additional 2 were spent writing and debugging the
+  program.
+
+* Performance
+
+  MPI cannot separate processes on multiple logical cores, only on /physical/
+  processor dies, my machine is limited to one die and as such performance
+  metrics do not change. (MPI does not operate with /threads/, its documentation
+  is explicit in this respect)
+
+  Time Taken on average: 0.002054 seconds
+
+* Analysis
+
+  In terms of reasoning the performance difference, it shares the same reason
+  with why multithreaded programs written with concurrency in other libraries or
+  implementations see an increase in program speed: work is divided among
+  multiple logical cores that execute in parallel.
+
+* Observations in post
+
+  The assignment was very fun and I enjoyed it, issues with compiling MPI
+  aside. The distributed memory model with messaging was much more complicated
+  to understand that PyMPs shared memory model, and took much longer to write.
