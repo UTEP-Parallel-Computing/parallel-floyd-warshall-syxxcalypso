@@ -24,8 +24,8 @@
 
 * Project Time
 
-  Approximately 3 consecutive days were spent compiling the MPI binaries from
-  source on my machine, an additional 2 were spent writing and debugging the
+  Approximately 2 days were spent compiling the MPI binaries from
+  source on my machine, an additional day was spent writing and debugging the
   program.
 
 * Performance
