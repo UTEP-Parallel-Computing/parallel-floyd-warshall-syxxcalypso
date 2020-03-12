@@ -49,3 +49,7 @@
   The assignment was very fun and I enjoyed it, issues with compiling MPI
   aside. The distributed memory model with messaging was much more complicated
   to understand that PyMPs shared memory model, and took much longer to write.
+  
+Edit:
+
+The program on my machine must be run with the --oversubscribe option to account for the limited processor dies
